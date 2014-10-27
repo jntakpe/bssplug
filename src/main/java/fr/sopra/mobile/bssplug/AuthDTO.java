@@ -21,8 +21,7 @@ public class AuthDTO {
     private String j_password;
 
     @NotNull
-    @DateTimeFormat(pattern = "dd/MM/yyyy")
-    private Date dateNaissance;
+    private String dateNaissance;
 
     @AssertTrue(message = "Le mot de passe doit être 'password'")
     public boolean isPasswordValid() {
@@ -31,8 +30,7 @@ public class AuthDTO {
 
     @AssertTrue(message = "La date de naissance doit être égale à 21/04/1973")
     public boolean isDateNaissanceValid() {
-        System.out.println(dateNaissance);
-        return LocalDate.of(1973, 4, 21).isEqual(dateNaissance.toInstant().atZone(ZoneId.systemDefault()).toLocalDate());
+        return "21/04/1973".equals(dateNaissance);
     }
 
     public String getJ_username() {
@@ -51,11 +49,11 @@ public class AuthDTO {
         this.j_password = j_password;
     }
 
-    public Date getDateNaissance() {
+    public String getDateNaissance() {
         return dateNaissance;
     }
 
-    public void setDateNaissance(Date dateNaissance) {
+    public void setDateNaissance(String dateNaissance) {
         this.dateNaissance = dateNaissance;
     }
 }

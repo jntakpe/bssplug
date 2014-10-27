@@ -54,10 +54,8 @@ public class BssPlug {
         return Files.lines(path).collect(Collectors.joining());
     }
 
-    @RequestMapping(value = "/auth", method = RequestMethod.GET)
+    @RequestMapping(value = "/auth")
     public ResponseEntity<?> auth(@Valid AuthDTO authDTO, BindingResult result) {
-        System.out.println(authDTO);
-        System.out.println("errors: " + result);
         if (result.hasErrors()) {
             return new ResponseEntity<List<ObjectError>>(result.getAllErrors(), HttpStatus.UNAUTHORIZED);
         }
