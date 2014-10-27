@@ -12,6 +12,8 @@ Pour démarrer l'application :
 * via le jar : Depuis l'invite de commandes : java -jar MON_FICHIER.jar.
  Les properties sont externalisables en tappant : java -jar MON_FICHIER.jar --spring.config.location=PATH_TO/application.yml
  
- Pour s'authentifier : http://localhost:8080/MON_CONTEXTE_ROOT/auth. Un seul mot de passe est accepté 'password' et une seule date de naissance '21/04/1973'
+Pour s'authentifier : http://localhost:8080/MON_CONTEXTE_ROOT/auth. Un seul mot de passe est accepté 'password' et une seule date de naissance '21/04/1973'
  
- Pour simuler un appel BSS : http://localhost:8080/MON_CONTEXTE_ROOT/MON_SOUS_DOSSIER/MON_NOM_DE_FICHIER_JSON
+Pour simuler un appel BSS : http://localhost:8080/MON_CONTEXTE_ROOT/MON_SOUS_DOSSIER/MON_NOM_DE_FICHIER_JSON
+
+Pour générer le jar depuis les sources : mvn package
