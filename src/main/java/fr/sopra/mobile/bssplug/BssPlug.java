@@ -53,10 +53,10 @@ public class BssPlug {
     @RequestMapping(value = "/auth", method = RequestMethod.POST)
     public ResponseEntity<?> auth(@Valid AuthDTO authDTO, BindingResult result) {
         if (result.hasErrors()) {
-            return new ResponseEntity<>(result.getAllErrors(), HttpStatus.UNAUTHORIZED);
+            return new ResponseEntity<Object>(result.getAllErrors(), HttpStatus.UNAUTHORIZED);
         }
         UserDTO userDTO = new UserDTO(authDTO.getJ_username(), "b13f85dc-ef69-4c35-9b08-6e4b28fc4037");
-        return new ResponseEntity<>(userDTO, HttpStatus.OK);
+        return new ResponseEntity<Object>(userDTO, HttpStatus.OK);
     }
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
