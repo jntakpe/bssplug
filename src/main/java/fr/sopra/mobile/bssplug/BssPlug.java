@@ -2,7 +2,6 @@ package fr.sopra.mobile.bssplug;
 
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.context.web.SpringBootServletInitializer;
@@ -64,10 +63,6 @@ public class BssPlug extends SpringBootServletInitializer {
     protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
         application.sources(this.getClass());
         return application;
-    }
-
-    public static void main(String[] args) {
-        SpringApplication.run(BssPlug.class, args);
     }
 
     @ResponseBody
