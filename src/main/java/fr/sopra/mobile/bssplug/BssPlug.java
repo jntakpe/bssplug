@@ -2,6 +2,7 @@ package fr.sopra.mobile.bssplug;
 
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.context.web.SpringBootServletInitializer;
@@ -32,15 +33,13 @@ import java.io.IOException;
 @EnableAutoConfiguration
 @EntityScan
 @EnableJpaRepositories
-public class BssPlug extends SpringBootServletInitializer {
+public class BssPlug {
 
     @Autowired
     private JsonDataRepository jsonDataRepository;
 
-    @Override
-    protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
-        application.sources(this.getClass());
-        return application;
+    public static void main(String[] args) {
+        SpringApplication.run(BssPlug.class);
     }
 
     @ResponseBody

@@ -16,6 +16,10 @@
         <version>1.1.8.RELEASE</version>
     </parent>
 
+    <properties>
+        <start-class>fr.sopra.mobile.bssplug.BssPlug</start-class>
+    </properties>
+
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -41,5 +45,14 @@
             <version>9.0-801.jdbc4</version>
         </dependency>
     </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>
