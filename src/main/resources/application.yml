@@ -2,7 +2,7 @@ server:
   context-path: /bssplug
 spring:
   datasource:
-    url: jdbc:postgres://qhpvjawcbbijjp:hl7wT6bV8ZWJ9_hpe9lMdzRJt9@ec2-54-243-42-236.compute-1.amazonaws.com:5432/d46t4pp13ldde7
-    username: postgres
-    password: sopra*
+    url: jdbc:postgres://ec2-54-243-42-236.compute-1.amazonaws.com:5432/d46t4pp13ldde7
+    username: qhpvjawcbbijjp
+    password: hl7wT6bV8ZWJ9_hpe9lMdzRJt9
     driverClassName: org.postgresql.Driver
