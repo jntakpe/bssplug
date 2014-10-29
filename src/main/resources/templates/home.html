@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<!-- head -->
+<head>
+    <!-- Meta -->
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <meta content="jntakpe" name="author"/>
+
+    <!-- Title -->
+    <title>BSS plug</title>
+
+    <!-- Style sheets -->
+    <link rel="stylesheet" th:href="@{/css/bootstrap.css}"/>
+</head>
+
+<body>
+    <h1>Saisie de données json</h1>
+    <form role="form" th:action="@{/}" th:object="jsonData">
+        <div class="form-group">
+            <label for="id">Identifiant du fichier</label>
+            <input type="text" class="form-control" th:field="*{id}" placeholder="Identifiant du fichier">
+        </div>
+        <div class="form-group">
+            <label for="service">Service</label>
+            <input type="text" class="form-control" th:field="*{service}" placeholder="Service">
+        </div>
+        <div class="form-group">
+            <label for="json">Contenu json</label>
+            <textarea class="form-control" th:field="*{json}" rows="3"></textarea>
+        </div>
+        <button type="submit" class="btn btn-default">Envoyer</button>
+    </form>
+</body>
+</html>

@@ -1,5 +1,9 @@
-server:
-  port: 8180
-  context-path: /bssplug
-env:
-  rootDir: C:\\Temp\\root
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/bssplug
+    username: postgres
+    password: sopra*
+    driverClassName: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: create
