@@ -20,7 +20,7 @@ public class JsonData {
     private String service;
 
     @NotEmpty
-    @Column(columnDefinition = "LONGTEXT")
+    @Column(columnDefinition = "TEXT")
     private String json;
 
     public String getId() {

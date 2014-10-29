@@ -43,16 +43,16 @@ public class BssPlug {
     }
 
     @ResponseBody
-    @RequestMapping("/{service}/{id}")
+    @RequestMapping(value = "/rest/{service}/{id}", method = RequestMethod.GET)
     public String toJson(@PathVariable String service, @PathVariable String id) throws IOException {
         String msg = "L'url doit être de la forme : http://URL/SERVICE/ID";
         Assert.isTrue(!StringUtils.isBlank(service) && !StringUtils.isBlank(id), msg);
-        jsonDataRepository.findAll();
-        return "toto";
+        JsonData jsonData = jsonDataRepository.findByServiceAndId(service, id);
+        return jsonData == null ? "" : jsonData.getJson();
     }
 
     @ResponseBody
-    @RequestMapping(value = "/auth")
+    @RequestMapping(value = "/auth", method = RequestMethod.POST)
     public ResponseEntity<?> auth(@Valid AuthDTO authDTO, BindingResult result) {
         if (result.hasErrors()) {
             return new ResponseEntity<List<ObjectError>>(result.getAllErrors(), HttpStatus.UNAUTHORIZED);
@@ -63,7 +63,7 @@ public class BssPlug {
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public ModelAndView home() {
-        return new ModelAndView("home").addObject(new JsonData());
+        return new ModelAndView("home").addObject("jsonData", new JsonData());
     }
 
     @RequestMapping(value = "/", method = RequestMethod.POST)

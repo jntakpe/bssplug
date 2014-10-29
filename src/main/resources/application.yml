@@ -1,9 +1,8 @@
+server:
+  context-path: /bssplug
 spring:
   datasource:
     url: jdbc:postgresql://localhost:5432/bssplug
     username: postgres
     password: sopra*
     driverClassName: org.postgresql.Driver
-  jpa:
-    hibernate:
-      ddl-auto: create

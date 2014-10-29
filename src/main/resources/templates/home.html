@@ -11,19 +11,22 @@
     <title>BSS plug</title>
 
     <!-- Style sheets -->
-    <link rel="stylesheet" th:href="@{/css/bootstrap.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.css}"/>
 </head>
 
 <body>
+
+<div class="container">
     <h1>Saisie de données json</h1>
-    <form role="form" th:action="@{/}" th:object="jsonData">
+
+    <form class="form-horizontal" role="form" th:action="@{/}" th:object="${jsonData}" method="post">
         <div class="form-group">
             <label for="id">Identifiant du fichier</label>
-            <input type="text" class="form-control" th:field="*{id}" placeholder="Identifiant du fichier">
+            <input type="text" class="form-control" th:field="*{id}" placeholder="Identifiant du fichier"/>
         </div>
         <div class="form-group">
             <label for="service">Service</label>
-            <input type="text" class="form-control" th:field="*{service}" placeholder="Service">
+            <input type="text" class="form-control" th:field="*{service}" placeholder="Service"/>
         </div>
         <div class="form-group">
             <label for="json">Contenu json</label>
@@ -31,5 +34,6 @@
         </div>
         <button type="submit" class="btn btn-default">Envoyer</button>
     </form>
+</div>
 </body>
 </html>

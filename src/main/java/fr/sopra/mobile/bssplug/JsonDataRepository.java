@@ -9,4 +9,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface JsonDataRepository extends JpaRepository<JsonData, String> {
 
+
+    JsonData findByServiceAndId(String service, String id);
 }
