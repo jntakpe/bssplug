@@ -8,7 +8,7 @@
     <version>1.0.0</version>
     <name>Bouchon de BSS pour mobile</name>
     <description>Permet de lire un fichier sur le disque et de renvoyer son contenu sous forme de JSON</description>
-    <packaging>war</packaging>
+    <packaging>jar</packaging>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
